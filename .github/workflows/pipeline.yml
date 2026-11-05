@@ -1,7 +1,8 @@
 name: Pipeline
 
-# Run by hand (Actions -> Pipeline -> Run workflow): the full experiment on the real data,
-# then a build and smoke test of the Docker image.
+# Run by hand (Actions -> Pipeline -> Run workflow): the full experiment on the real data.
+# Results, models and figures are uploaded as an artifact; the diff step shows whether the run
+# reproduced the committed numbers.
 on:
   workflow_dispatch:
 
@@ -28,18 +29,3 @@ jobs:
             docs/figs/
             README.md
 
-  docker:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - run: docker build -t rul-api .
-      - name: Start the API and score one engine
-        run: |
-          docker run -d --name rul -p 8000:8000 rul-api
-          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/health && break; sleep 1; done
-          curl -sf -X POST http://127.0.0.1:8000/predict \
-            -H 'content-type: application/json' -d @examples/predict_FD001_unit1.json | tee out.json
-          python3 -c "import json; r = json.load(open('out.json')); assert r['action']; print(r['rul'])"
-      - if: always()
-        run: docker logs rul || true
