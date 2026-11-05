@@ -309,9 +309,10 @@ results/           experiment outputs, committed
 scripts/           figures, example request
 ```
 
-CI (`.github/workflows/ci.yml`) runs lint and tests on every push. The manual **Pipeline**
-workflow runs `make all` on the real data, uploads results and models, and builds and smoke-tests
-the Docker image.
+CI (`.github/workflows/ci.yml`) runs lint and tests on every push. The **Docker** workflow builds
+the image whenever its inputs change, starts it, scores a test engine through the API and checks
+that an input from an unknown operating condition gets `inspect_manually`. The manual
+**Pipeline** workflow runs `make all` on the real data and uploads results, models and figures.
 
 ## Limitations
 

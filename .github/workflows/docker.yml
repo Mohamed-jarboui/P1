@@ -1,0 +1,64 @@
+name: Docker
+
+# Builds the self-contained image (it downloads C-MAPSS and trains the four models during the
+# build), starts it, and scores engines through the API. Runs when the image's inputs change,
+# or by hand (Actions -> Docker -> Run workflow).
+on:
+  push:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - pyproject.toml
+      - uv.lock
+      - "src/**"
+      - "examples/**"
+      - .github/workflows/docker.yml
+  pull_request:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - pyproject.toml
+      - uv.lock
+      - "src/**"
+      - "examples/**"
+      - .github/workflows/docker.yml
+  workflow_dispatch:
+
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build (download, verify, train)
+        run: docker build -t rul-api .
+      - name: Start the API
+        run: |
+          docker run -d --name rul -p 8000:8000 rul-api
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/health && break; sleep 1; done
+          curl -sf http://127.0.0.1:8000/health | tee health.json
+          python3 -c "import json; h = json.load(open('health.json')); assert h['models'] == ['FD001', 'FD002', 'FD003', 'FD004'], h"
+      - name: Score a test engine from a known condition
+        run: |
+          curl -sf -X POST http://127.0.0.1:8000/predict \
+            -H 'content-type: application/json' -d @examples/predict_FD001_unit1.json | tee ok.json
+          python3 - <<'EOF'
+          import json
+          r = json.load(open("ok.json"))
+          assert 0 <= r["interval"]["low"] <= r["rul"] <= r["interval"]["high"] <= 125, r
+          assert r["guards"]["reliable"] and r["action"] != "inspect_manually", r
+          EOF
+      - name: Inputs from an unknown operating condition are flagged
+        run: |
+          python3 - <<'EOF'
+          import json
+          body = json.load(open("examples/predict_FD001_unit1.json"))
+          for cycle in body["cycles"]:
+              cycle["settings"][0] = 30.0  # an altitude the FD001 model never saw
+          json.dump(body, open("odd.json", "w"))
+          EOF
+          curl -sf -X POST http://127.0.0.1:8000/predict \
+            -H 'content-type: application/json' -d @odd.json | tee flagged.json
+          python3 -c "import json; r = json.load(open('flagged.json')); assert r['action'] == 'inspect_manually', r"
+      - if: always()
+        run: docker logs rul || true
