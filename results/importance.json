@@ -1,0 +1,436 @@
+{
+  "_meta": {
+    "created_at": "2026-11-05T01:43:51+00:00",
+    "rul_version": "0.1.0",
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "cpus": 4,
+    "seconds": 81.4,
+    "data_sha256": {
+      "RUL_FD001.txt": "a19c8ec94931",
+      "RUL_FD002.txt": "c851dd96a6ea",
+      "RUL_FD003.txt": "df1e0566306b",
+      "RUL_FD004.txt": "196b836b85a9",
+      "test_FD001.txt": "3cda7109ce17",
+      "test_FD002.txt": "de7b5bf7e998",
+      "test_FD003.txt": "299babd63c8d",
+      "test_FD004.txt": "1dc675fff062",
+      "train_FD001.txt": "963b5e22825b",
+      "train_FD002.txt": "dac6c4dbc4e7",
+      "train_FD003.txt": "2abbe9968cc5",
+      "train_FD004.txt": "27ef6160b6a1"
+    }
+  },
+  "subsets": {
+    "FD001": {
+      "model": "hgb_window",
+      "baseline_rmse": 11.2565,
+      "n_val_units": 20,
+      "n_val_rows": 4196,
+      "repeats": 5,
+      "groups": [
+        {
+          "group": "cycle",
+          "description": "engine age in cycles",
+          "rmse_increase": 7.0129,
+          "std": 0.2291
+        },
+        {
+          "group": "s4",
+          "description": "T50 - total temperature at LPT outlet",
+          "rmse_increase": 5.0227,
+          "std": 0.1355
+        },
+        {
+          "group": "s14",
+          "description": "NRc - corrected core speed",
+          "rmse_increase": 2.6757,
+          "std": 0.1126
+        },
+        {
+          "group": "s9",
+          "description": "Nc - physical core speed",
+          "rmse_increase": 2.4582,
+          "std": 0.1352
+        },
+        {
+          "group": "s11",
+          "description": "Ps30 - static pressure at HPC outlet",
+          "rmse_increase": 1.5003,
+          "std": 0.0785
+        },
+        {
+          "group": "s15",
+          "description": "BPR - bypass ratio",
+          "rmse_increase": 1.4013,
+          "std": 0.0452
+        },
+        {
+          "group": "s12",
+          "description": "phi - ratio of fuel flow to Ps30",
+          "rmse_increase": 1.0544,
+          "std": 0.048
+        },
+        {
+          "group": "s17",
+          "description": "htBleed - bleed enthalpy",
+          "rmse_increase": 0.9828,
+          "std": 0.0282
+        },
+        {
+          "group": "s13",
+          "description": "NRf - corrected fan speed",
+          "rmse_increase": 0.8506,
+          "std": 0.038
+        },
+        {
+          "group": "s7",
+          "description": "P30 - total pressure at HPC outlet",
+          "rmse_increase": 0.8258,
+          "std": 0.0549
+        },
+        {
+          "group": "s2",
+          "description": "T24 - total temperature at LPC outlet",
+          "rmse_increase": 0.7913,
+          "std": 0.0229
+        },
+        {
+          "group": "s8",
+          "description": "Nf - physical fan speed",
+          "rmse_increase": 0.5432,
+          "std": 0.0628
+        },
+        {
+          "group": "s21",
+          "description": "W32 - LPT coolant bleed",
+          "rmse_increase": 0.3879,
+          "std": 0.0274
+        },
+        {
+          "group": "s3",
+          "description": "T30 - total temperature at HPC outlet",
+          "rmse_increase": 0.3542,
+          "std": 0.0505
+        },
+        {
+          "group": "s20",
+          "description": "W31 - HPT coolant bleed",
+          "rmse_increase": 0.2401,
+          "std": 0.0392
+        }
+      ]
+    },
+    "FD002": {
+      "model": "hgb_window",
+      "baseline_rmse": 12.8619,
+      "n_val_units": 52,
+      "n_val_rows": 10730,
+      "repeats": 5,
+      "groups": [
+        {
+          "group": "cycle",
+          "description": "engine age in cycles",
+          "rmse_increase": 7.1391,
+          "std": 0.075
+        },
+        {
+          "group": "s11",
+          "description": "Ps30 - static pressure at HPC outlet",
+          "rmse_increase": 5.9122,
+          "std": 0.1059
+        },
+        {
+          "group": "s4",
+          "description": "T50 - total temperature at LPT outlet",
+          "rmse_increase": 3.5512,
+          "std": 0.0886
+        },
+        {
+          "group": "s15",
+          "description": "BPR - bypass ratio",
+          "rmse_increase": 1.5767,
+          "std": 0.0311
+        },
+        {
+          "group": "s2",
+          "description": "T24 - total temperature at LPC outlet",
+          "rmse_increase": 1.2109,
+          "std": 0.0391
+        },
+        {
+          "group": "s14",
+          "description": "NRc - corrected core speed",
+          "rmse_increase": 1.1358,
+          "std": 0.0264
+        },
+        {
+          "group": "s17",
+          "description": "htBleed - bleed enthalpy",
+          "rmse_increase": 0.9614,
+          "std": 0.0416
+        },
+        {
+          "group": "s9",
+          "description": "Nc - physical core speed",
+          "rmse_increase": 0.948,
+          "std": 0.0361
+        },
+        {
+          "group": "s3",
+          "description": "T30 - total temperature at HPC outlet",
+          "rmse_increase": 0.5228,
+          "std": 0.0357
+        },
+        {
+          "group": "s13",
+          "description": "NRf - corrected fan speed",
+          "rmse_increase": 0.2583,
+          "std": 0.0192
+        },
+        {
+          "group": "s8",
+          "description": "Nf - physical fan speed",
+          "rmse_increase": 0.23,
+          "std": 0.0288
+        },
+        {
+          "group": "s7",
+          "description": "P30 - total pressure at HPC outlet",
+          "rmse_increase": 0.2115,
+          "std": 0.0067
+        },
+        {
+          "group": "s21",
+          "description": "W32 - LPT coolant bleed",
+          "rmse_increase": 0.1341,
+          "std": 0.0234
+        },
+        {
+          "group": "s12",
+          "description": "phi - ratio of fuel flow to Ps30",
+          "rmse_increase": 0.1332,
+          "std": 0.0193
+        },
+        {
+          "group": "s20",
+          "description": "W31 - HPT coolant bleed",
+          "rmse_increase": 0.006,
+          "std": 0.0117
+        }
+      ]
+    },
+    "FD003": {
+      "model": "hgb_window",
+      "baseline_rmse": 11.2253,
+      "n_val_units": 20,
+      "n_val_rows": 5417,
+      "repeats": 5,
+      "groups": [
+        {
+          "group": "s11",
+          "description": "Ps30 - static pressure at HPC outlet",
+          "rmse_increase": 5.7071,
+          "std": 0.1097
+        },
+        {
+          "group": "cycle",
+          "description": "engine age in cycles",
+          "rmse_increase": 4.8279,
+          "std": 0.0548
+        },
+        {
+          "group": "s9",
+          "description": "Nc - physical core speed",
+          "rmse_increase": 3.792,
+          "std": 0.1063
+        },
+        {
+          "group": "s3",
+          "description": "T30 - total temperature at HPC outlet",
+          "rmse_increase": 3.4403,
+          "std": 0.0964
+        },
+        {
+          "group": "s12",
+          "description": "phi - ratio of fuel flow to Ps30",
+          "rmse_increase": 2.1827,
+          "std": 0.0858
+        },
+        {
+          "group": "s17",
+          "description": "htBleed - bleed enthalpy",
+          "rmse_increase": 1.8793,
+          "std": 0.0716
+        },
+        {
+          "group": "s14",
+          "description": "NRc - corrected core speed",
+          "rmse_increase": 0.8763,
+          "std": 0.0274
+        },
+        {
+          "group": "s7",
+          "description": "P30 - total pressure at HPC outlet",
+          "rmse_increase": 0.7878,
+          "std": 0.0364
+        },
+        {
+          "group": "s4",
+          "description": "T50 - total temperature at LPT outlet",
+          "rmse_increase": 0.5187,
+          "std": 0.0382
+        },
+        {
+          "group": "s20",
+          "description": "W31 - HPT coolant bleed",
+          "rmse_increase": 0.2805,
+          "std": 0.0084
+        },
+        {
+          "group": "s6",
+          "description": "P15 - total pressure in bypass duct",
+          "rmse_increase": 0.2787,
+          "std": 0.0165
+        },
+        {
+          "group": "s21",
+          "description": "W32 - LPT coolant bleed",
+          "rmse_increase": 0.2448,
+          "std": 0.0302
+        },
+        {
+          "group": "s2",
+          "description": "T24 - total temperature at LPC outlet",
+          "rmse_increase": 0.2127,
+          "std": 0.0145
+        },
+        {
+          "group": "s13",
+          "description": "NRf - corrected fan speed",
+          "rmse_increase": 0.2047,
+          "std": 0.0546
+        },
+        {
+          "group": "s8",
+          "description": "Nf - physical fan speed",
+          "rmse_increase": 0.0476,
+          "std": 0.0217
+        },
+        {
+          "group": "s15",
+          "description": "BPR - bypass ratio",
+          "rmse_increase": -0.0637,
+          "std": 0.0387
+        }
+      ]
+    },
+    "FD004": {
+      "model": "hgb_window",
+      "baseline_rmse": 14.0088,
+      "n_val_units": 50,
+      "n_val_rows": 13288,
+      "repeats": 5,
+      "groups": [
+        {
+          "group": "s11",
+          "description": "Ps30 - static pressure at HPC outlet",
+          "rmse_increase": 4.4614,
+          "std": 0.0732
+        },
+        {
+          "group": "cycle",
+          "description": "engine age in cycles",
+          "rmse_increase": 4.3743,
+          "std": 0.0481
+        },
+        {
+          "group": "s4",
+          "description": "T50 - total temperature at LPT outlet",
+          "rmse_increase": 1.6647,
+          "std": 0.0565
+        },
+        {
+          "group": "s14",
+          "description": "NRc - corrected core speed",
+          "rmse_increase": 1.5572,
+          "std": 0.0608
+        },
+        {
+          "group": "s17",
+          "description": "htBleed - bleed enthalpy",
+          "rmse_increase": 1.3514,
+          "std": 0.0478
+        },
+        {
+          "group": "s3",
+          "description": "T30 - total temperature at HPC outlet",
+          "rmse_increase": 1.1412,
+          "std": 0.0411
+        },
+        {
+          "group": "s9",
+          "description": "Nc - physical core speed",
+          "rmse_increase": 0.8424,
+          "std": 0.0361
+        },
+        {
+          "group": "s15",
+          "description": "BPR - bypass ratio",
+          "rmse_increase": 0.4569,
+          "std": 0.0232
+        },
+        {
+          "group": "s13",
+          "description": "NRf - corrected fan speed",
+          "rmse_increase": 0.4557,
+          "std": 0.0481
+        },
+        {
+          "group": "s8",
+          "description": "Nf - physical fan speed",
+          "rmse_increase": 0.3938,
+          "std": 0.0189
+        },
+        {
+          "group": "s2",
+          "description": "T24 - total temperature at LPC outlet",
+          "rmse_increase": 0.3416,
+          "std": 0.0221
+        },
+        {
+          "group": "s6",
+          "description": "P15 - total pressure in bypass duct",
+          "rmse_increase": 0.1801,
+          "std": 0.0433
+        },
+        {
+          "group": "s21",
+          "description": "W32 - LPT coolant bleed",
+          "rmse_increase": 0.1241,
+          "std": 0.0127
+        },
+        {
+          "group": "s12",
+          "description": "phi - ratio of fuel flow to Ps30",
+          "rmse_increase": 0.1071,
+          "std": 0.0088
+        },
+        {
+          "group": "s7",
+          "description": "P30 - total pressure at HPC outlet",
+          "rmse_increase": 0.0647,
+          "std": 0.0078
+        },
+        {
+          "group": "s20",
+          "description": "W31 - HPT coolant bleed",
+          "rmse_increase": 0.0366,
+          "std": 0.0084
+        }
+      ]
+    }
+  }
+}

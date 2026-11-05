@@ -1,0 +1,716 @@
+{
+  "_meta": {
+    "created_at": "2026-11-05T01:41:22+00:00",
+    "rul_version": "0.1.0",
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "cpus": 4,
+    "seconds": 7.6,
+    "data_sha256": {
+      "RUL_FD001.txt": "a19c8ec94931",
+      "RUL_FD002.txt": "c851dd96a6ea",
+      "RUL_FD003.txt": "df1e0566306b",
+      "RUL_FD004.txt": "196b836b85a9",
+      "test_FD001.txt": "3cda7109ce17",
+      "test_FD002.txt": "de7b5bf7e998",
+      "test_FD003.txt": "299babd63c8d",
+      "test_FD004.txt": "1dc675fff062",
+      "train_FD001.txt": "963b5e22825b",
+      "train_FD002.txt": "dac6c4dbc4e7",
+      "train_FD003.txt": "2abbe9968cc5",
+      "train_FD004.txt": "27ef6160b6a1"
+    }
+  },
+  "subsets": {
+    "FD001": {
+      "default": {
+        "costs": {
+          "planned": 1.0,
+          "failure": 5.0
+        },
+        "lead_time": 10,
+        "policies": {
+          "reactive": {
+            "cost_rate": 0.0242,
+            "vs_oracle": 5.0,
+            "failures": 100,
+            "failure_rate": 1.0,
+            "mean_unused_life": 0.0,
+            "n": 100
+          },
+          "fixed_age": {
+            "cost_rate": 0.0082,
+            "vs_oracle": 1.6853,
+            "failures": 3,
+            "failure_rate": 0.03,
+            "mean_unused_life": 71.3402,
+            "n": 100
+          },
+          "predictive_point": {
+            "cost_rate": 0.0052,
+            "vs_oracle": 1.0676,
+            "failures": 1,
+            "failure_rate": 0.01,
+            "mean_unused_life": 5.3939,
+            "n": 100
+          },
+          "predictive_lower_bound": {
+            "cost_rate": 0.0052,
+            "vs_oracle": 1.0678,
+            "failures": 1,
+            "failure_rate": 0.01,
+            "mean_unused_life": 5.4343,
+            "n": 100
+          },
+          "oracle": {
+            "cost_rate": 0.0048,
+            "vs_oracle": 1.0,
+            "failures": 0,
+            "failure_rate": 0.0,
+            "mean_unused_life": 0.0,
+            "n": 100
+          }
+        },
+        "chosen_per_fold": {
+          "fixed_age": [
+            135,
+            147,
+            135,
+            135,
+            135
+          ],
+          "point": [
+            16.0,
+            16.0,
+            16.0,
+            16.0,
+            15.0
+          ],
+          "lower_bound": [
+            11.0,
+            11.0,
+            11.0,
+            11.0,
+            10.0
+          ]
+        }
+      },
+      "vs_oracle_by_cost_ratio": {
+        "2": {
+          "reactive": 2.0,
+          "fixed_age": 1.4631,
+          "predictive_point": 1.0368,
+          "predictive_lower_bound": 1.037,
+          "oracle": 1.0
+        },
+        "5": {
+          "reactive": 5.0,
+          "fixed_age": 1.6853,
+          "predictive_point": 1.0676,
+          "predictive_lower_bound": 1.0678,
+          "oracle": 1.0
+        },
+        "10": {
+          "reactive": 10.0,
+          "fixed_age": 1.7388,
+          "predictive_point": 1.119,
+          "predictive_lower_bound": 1.1192,
+          "oracle": 1.0
+        },
+        "20": {
+          "reactive": 20.0,
+          "fixed_age": 1.8983,
+          "predictive_point": 1.2216,
+          "predictive_lower_bound": 1.2219,
+          "oracle": 1.0
+        }
+      },
+      "by_lead_time": {
+        "5": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6853,
+            "failures": 3
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0693,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0702,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "10": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6853,
+            "failures": 3
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0676,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0678,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "20": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6853,
+            "failures": 3
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0466,
+            "failures": 0
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.046,
+            "failures": 0
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        }
+      }
+    },
+    "FD002": {
+      "default": {
+        "costs": {
+          "planned": 1.0,
+          "failure": 5.0
+        },
+        "lead_time": 10,
+        "policies": {
+          "reactive": {
+            "cost_rate": 0.0242,
+            "vs_oracle": 5.0,
+            "failures": 260,
+            "failure_rate": 1.0,
+            "mean_unused_life": 0.0,
+            "n": 260
+          },
+          "fixed_age": {
+            "cost_rate": 0.0079,
+            "vs_oracle": 1.6246,
+            "failures": 7,
+            "failure_rate": 0.0269,
+            "mean_unused_life": 67.6087,
+            "n": 260
+          },
+          "predictive_point": {
+            "cost_rate": 0.0052,
+            "vs_oracle": 1.0739,
+            "failures": 1,
+            "failure_rate": 0.0038,
+            "mean_unused_life": 11.3012,
+            "n": 260
+          },
+          "predictive_lower_bound": {
+            "cost_rate": 0.0053,
+            "vs_oracle": 1.0899,
+            "failures": 2,
+            "failure_rate": 0.0077,
+            "mean_unused_life": 11.3101,
+            "n": 260
+          },
+          "oracle": {
+            "cost_rate": 0.0048,
+            "vs_oracle": 1.0,
+            "failures": 0,
+            "failure_rate": 0.0,
+            "mean_unused_life": 0.0,
+            "n": 260
+          }
+        },
+        "chosen_per_fold": {
+          "fixed_age": [
+            133,
+            143,
+            144,
+            143,
+            143
+          ],
+          "point": [
+            21.0,
+            21.0,
+            21.0,
+            19.0,
+            21.0
+          ],
+          "lower_bound": [
+            13.0,
+            13.0,
+            12.0,
+            12.0,
+            13.0
+          ]
+        }
+      },
+      "vs_oracle_by_cost_ratio": {
+        "2": {
+          "reactive": 2.0,
+          "fixed_age": 1.4656,
+          "predictive_point": 1.0501,
+          "predictive_lower_bound": 1.0523,
+          "oracle": 1.0
+        },
+        "5": {
+          "reactive": 5.0,
+          "fixed_age": 1.6246,
+          "predictive_point": 1.0739,
+          "predictive_lower_bound": 1.0899,
+          "oracle": 1.0
+        },
+        "10": {
+          "reactive": 10.0,
+          "fixed_age": 1.6687,
+          "predictive_point": 1.0942,
+          "predictive_lower_bound": 1.0681,
+          "oracle": 1.0
+        },
+        "20": {
+          "reactive": 20.0,
+          "fixed_age": 1.7307,
+          "predictive_point": 1.1349,
+          "predictive_lower_bound": 1.0681,
+          "oracle": 1.0
+        }
+      },
+      "by_lead_time": {
+        "5": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 260
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6246,
+            "failures": 7
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0612,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0616,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "10": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 260
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6246,
+            "failures": 7
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0739,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0899,
+            "failures": 2
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "20": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 260
+          },
+          "fixed_age": {
+            "vs_oracle": 1.6246,
+            "failures": 7
+          },
+          "predictive_point": {
+            "vs_oracle": 1.1221,
+            "failures": 2
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.1022,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        }
+      }
+    },
+    "FD003": {
+      "default": {
+        "costs": {
+          "planned": 1.0,
+          "failure": 5.0
+        },
+        "lead_time": 10,
+        "policies": {
+          "reactive": {
+            "cost_rate": 0.0202,
+            "vs_oracle": 5.0,
+            "failures": 100,
+            "failure_rate": 1.0,
+            "mean_unused_life": 0.0,
+            "n": 100
+          },
+          "fixed_age": {
+            "cost_rate": 0.0074,
+            "vs_oracle": 1.8251,
+            "failures": 2,
+            "failure_rate": 0.02,
+            "mean_unused_life": 102.9796,
+            "n": 100
+          },
+          "predictive_point": {
+            "cost_rate": 0.0044,
+            "vs_oracle": 1.0936,
+            "failures": 1,
+            "failure_rate": 0.01,
+            "mean_unused_life": 12.2323,
+            "n": 100
+          },
+          "predictive_lower_bound": {
+            "cost_rate": 0.0044,
+            "vs_oracle": 1.093,
+            "failures": 1,
+            "failure_rate": 0.01,
+            "mean_unused_life": 12.101,
+            "n": 100
+          },
+          "oracle": {
+            "cost_rate": 0.004,
+            "vs_oracle": 1.0,
+            "failures": 0,
+            "failure_rate": 0.0,
+            "mean_unused_life": 0.0,
+            "n": 100
+          }
+        },
+        "chosen_per_fold": {
+          "fixed_age": [
+            145,
+            145,
+            145,
+            152,
+            145
+          ],
+          "point": [
+            18.0,
+            24.0,
+            24.0,
+            24.0,
+            24.0
+          ],
+          "lower_bound": [
+            13.0,
+            16.0,
+            16.0,
+            15.0,
+            16.0
+          ]
+        }
+      },
+      "vs_oracle_by_cost_ratio": {
+        "2": {
+          "reactive": 2.0,
+          "fixed_age": 1.6337,
+          "predictive_point": 1.0696,
+          "predictive_lower_bound": 1.0688,
+          "oracle": 1.0
+        },
+        "5": {
+          "reactive": 5.0,
+          "fixed_age": 1.8251,
+          "predictive_point": 1.0936,
+          "predictive_lower_bound": 1.093,
+          "oracle": 1.0
+        },
+        "10": {
+          "reactive": 10.0,
+          "fixed_age": 1.9941,
+          "predictive_point": 1.1461,
+          "predictive_lower_bound": 1.1455,
+          "oracle": 1.0
+        },
+        "20": {
+          "reactive": 20.0,
+          "fixed_age": 2.3321,
+          "predictive_point": 1.2513,
+          "predictive_lower_bound": 1.2506,
+          "oracle": 1.0
+        }
+      },
+      "by_lead_time": {
+        "5": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8251,
+            "failures": 2
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0898,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0889,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "10": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8251,
+            "failures": 2
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0936,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.093,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "20": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 100
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8251,
+            "failures": 2
+          },
+          "predictive_point": {
+            "vs_oracle": 1.0442,
+            "failures": 0
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.0856,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        }
+      }
+    },
+    "FD004": {
+      "default": {
+        "costs": {
+          "planned": 1.0,
+          "failure": 5.0
+        },
+        "lead_time": 10,
+        "policies": {
+          "reactive": {
+            "cost_rate": 0.0203,
+            "vs_oracle": 5.0,
+            "failures": 249,
+            "failure_rate": 1.0,
+            "mean_unused_life": 0.0,
+            "n": 249
+          },
+          "fixed_age": {
+            "cost_rate": 0.0076,
+            "vs_oracle": 1.8753,
+            "failures": 6,
+            "failure_rate": 0.0241,
+            "mean_unused_life": 104.6914,
+            "n": 249
+          },
+          "predictive_point": {
+            "cost_rate": 0.0046,
+            "vs_oracle": 1.1383,
+            "failures": 1,
+            "failure_rate": 0.004,
+            "mean_unused_life": 26.5121,
+            "n": 249
+          },
+          "predictive_lower_bound": {
+            "cost_rate": 0.0046,
+            "vs_oracle": 1.1386,
+            "failures": 1,
+            "failure_rate": 0.004,
+            "mean_unused_life": 26.5806,
+            "n": 249
+          },
+          "oracle": {
+            "cost_rate": 0.0041,
+            "vs_oracle": 1.0,
+            "failures": 0,
+            "failure_rate": 0.0,
+            "mean_unused_life": 0.0,
+            "n": 249
+          }
+        },
+        "chosen_per_fold": {
+          "fixed_age": [
+            143,
+            143,
+            143,
+            145,
+            146
+          ],
+          "point": [
+            35.0,
+            35.0,
+            34.0,
+            35.0,
+            35.0
+          ],
+          "lower_bound": [
+            18.0,
+            19.0,
+            19.0,
+            19.0,
+            19.0
+          ]
+        }
+      },
+      "vs_oracle_by_cost_ratio": {
+        "2": {
+          "reactive": 2.0,
+          "fixed_age": 1.6958,
+          "predictive_point": 1.1062,
+          "predictive_lower_bound": 1.1177,
+          "oracle": 1.0
+        },
+        "5": {
+          "reactive": 5.0,
+          "fixed_age": 1.8753,
+          "predictive_point": 1.1383,
+          "predictive_lower_bound": 1.1386,
+          "oracle": 1.0
+        },
+        "10": {
+          "reactive": 10.0,
+          "fixed_age": 2.121,
+          "predictive_point": 1.1607,
+          "predictive_lower_bound": 1.1611,
+          "oracle": 1.0
+        },
+        "20": {
+          "reactive": 20.0,
+          "fixed_age": 2.0589,
+          "predictive_point": 1.2057,
+          "predictive_lower_bound": 1.2061,
+          "oracle": 1.0
+        }
+      },
+      "by_lead_time": {
+        "5": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 249
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8753,
+            "failures": 6
+          },
+          "predictive_point": {
+            "vs_oracle": 1.1379,
+            "failures": 3
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.1959,
+            "failures": 5
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "10": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 249
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8753,
+            "failures": 6
+          },
+          "predictive_point": {
+            "vs_oracle": 1.1383,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.1386,
+            "failures": 1
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        },
+        "20": {
+          "reactive": {
+            "vs_oracle": 5.0,
+            "failures": 249
+          },
+          "fixed_age": {
+            "vs_oracle": 1.8753,
+            "failures": 6
+          },
+          "predictive_point": {
+            "vs_oracle": 1.1206,
+            "failures": 1
+          },
+          "predictive_lower_bound": {
+            "vs_oracle": 1.1379,
+            "failures": 2
+          },
+          "oracle": {
+            "vs_oracle": 1.0,
+            "failures": 0
+          }
+        }
+      }
+    }
+  }
+}

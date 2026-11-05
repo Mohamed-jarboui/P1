@@ -1,0 +1,332 @@
+{
+  "_meta": {
+    "created_at": "2026-11-05T01:43:50+00:00",
+    "rul_version": "0.1.0",
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "cpus": 4,
+    "seconds": 81.2,
+    "data_sha256": {
+      "RUL_FD001.txt": "a19c8ec94931",
+      "RUL_FD002.txt": "c851dd96a6ea",
+      "RUL_FD003.txt": "df1e0566306b",
+      "RUL_FD004.txt": "196b836b85a9",
+      "test_FD001.txt": "3cda7109ce17",
+      "test_FD002.txt": "de7b5bf7e998",
+      "test_FD003.txt": "299babd63c8d",
+      "test_FD004.txt": "1dc675fff062",
+      "train_FD001.txt": "963b5e22825b",
+      "train_FD002.txt": "dac6c4dbc4e7",
+      "train_FD003.txt": "2abbe9968cc5",
+      "train_FD004.txt": "27ef6160b6a1"
+    }
+  },
+  "subsets": {
+    "FD001": {
+      "target_coverage": 0.9,
+      "test": {
+        "coverage": 0.9,
+        "lower_bound_coverage": 0.96,
+        "mean_width": 34.6266,
+        "n": 100
+      },
+      "per_bin": [
+        {
+          "bin": "<25",
+          "coverage": 0.9412,
+          "lower_bound_coverage": 0.9412,
+          "mean_width": 10.5619,
+          "n": 17
+        },
+        {
+          "bin": "25-50",
+          "coverage": 0.8571,
+          "lower_bound_coverage": 0.9286,
+          "mean_width": 23.293,
+          "n": 14
+        },
+        {
+          "bin": "50-75",
+          "coverage": 0.8462,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 45.8547,
+          "n": 13
+        },
+        {
+          "bin": "75-100",
+          "coverage": 1.0,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 58.8237,
+          "n": 18
+        },
+        {
+          "bin": ">=100",
+          "coverage": 0.8684,
+          "lower_bound_coverage": 0.9474,
+          "mean_width": 34.2649,
+          "n": 38
+        }
+      ],
+      "calibration": {
+        "alpha": 0.1,
+        "edges": [
+          25.0,
+          50.0,
+          75.0,
+          100.0
+        ],
+        "q_lo": [
+          -5.001,
+          -11.149,
+          -20.034,
+          -28.095,
+          -24.325
+        ],
+        "q_hi": [
+          5.561,
+          12.144,
+          25.82,
+          34.358,
+          17.542
+        ],
+        "n_per_bin": [
+          2483,
+          2353,
+          2253,
+          2838,
+          10704
+        ]
+      }
+    },
+    "FD002": {
+      "target_coverage": 0.9,
+      "test": {
+        "coverage": 0.9035,
+        "lower_bound_coverage": 0.9382,
+        "mean_width": 36.5771,
+        "n": 259
+      },
+      "per_bin": [
+        {
+          "bin": "<25",
+          "coverage": 0.8983,
+          "lower_bound_coverage": 0.9153,
+          "mean_width": 13.4902,
+          "n": 59
+        },
+        {
+          "bin": "25-50",
+          "coverage": 0.9286,
+          "lower_bound_coverage": 0.9643,
+          "mean_width": 29.5483,
+          "n": 28
+        },
+        {
+          "bin": "50-75",
+          "coverage": 0.9714,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 55.0586,
+          "n": 35
+        },
+        {
+          "bin": "75-100",
+          "coverage": 0.9412,
+          "lower_bound_coverage": 0.9412,
+          "mean_width": 65.8525,
+          "n": 34
+        },
+        {
+          "bin": ">=100",
+          "coverage": 0.8641,
+          "lower_bound_coverage": 0.9223,
+          "mean_width": 35.7684,
+          "n": 103
+        }
+      ],
+      "calibration": {
+        "alpha": 0.1,
+        "edges": [
+          25.0,
+          50.0,
+          75.0,
+          100.0
+        ],
+        "q_lo": [
+          -6.086,
+          -12.922,
+          -22.521,
+          -31.911,
+          -27.0
+        ],
+        "q_hi": [
+          7.532,
+          16.626,
+          32.538,
+          36.689,
+          17.216
+        ],
+        "n_per_bin": [
+          6347,
+          5942,
+          5628,
+          7906,
+          27936
+        ]
+      }
+    },
+    "FD003": {
+      "target_coverage": 0.9,
+      "test": {
+        "coverage": 0.87,
+        "lower_bound_coverage": 0.92,
+        "mean_width": 31.2708,
+        "n": 100
+      },
+      "per_bin": [
+        {
+          "bin": "<25",
+          "coverage": 0.9333,
+          "lower_bound_coverage": 0.9333,
+          "mean_width": 9.8342,
+          "n": 15
+        },
+        {
+          "bin": "25-50",
+          "coverage": 1.0,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 21.9427,
+          "n": 13
+        },
+        {
+          "bin": "50-75",
+          "coverage": 1.0,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 46.6417,
+          "n": 17
+        },
+        {
+          "bin": "75-100",
+          "coverage": 1.0,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 58.0151,
+          "n": 18
+        },
+        {
+          "bin": ">=100",
+          "coverage": 0.6757,
+          "lower_bound_coverage": 0.8108,
+          "mean_width": 23.1657,
+          "n": 37
+        }
+      ],
+      "calibration": {
+        "alpha": 0.1,
+        "edges": [
+          25.0,
+          50.0,
+          75.0,
+          100.0
+        ],
+        "q_lo": [
+          -4.875,
+          -9.974,
+          -17.561,
+          -24.016,
+          -16.285
+        ],
+        "q_hi": [
+          5.027,
+          11.969,
+          29.081,
+          36.269,
+          12.035
+        ],
+        "n_per_bin": [
+          2446,
+          2420,
+          2429,
+          2838,
+          14587
+        ]
+      }
+    },
+    "FD004": {
+      "target_coverage": 0.9,
+      "test": {
+        "coverage": 0.875,
+        "lower_bound_coverage": 0.9315,
+        "mean_width": 36.5608,
+        "n": 248
+      },
+      "per_bin": [
+        {
+          "bin": "<25",
+          "coverage": 0.8222,
+          "lower_bound_coverage": 0.8444,
+          "mean_width": 16.6598,
+          "n": 45
+        },
+        {
+          "bin": "25-50",
+          "coverage": 0.9688,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 36.4979,
+          "n": 32
+        },
+        {
+          "bin": "50-75",
+          "coverage": 1.0,
+          "lower_bound_coverage": 1.0,
+          "mean_width": 55.5709,
+          "n": 21
+        },
+        {
+          "bin": "75-100",
+          "coverage": 0.9091,
+          "lower_bound_coverage": 0.9545,
+          "mean_width": 64.8392,
+          "n": 44
+        },
+        {
+          "bin": ">=100",
+          "coverage": 0.8302,
+          "lower_bound_coverage": 0.9245,
+          "mean_width": 29.5241,
+          "n": 106
+        }
+      ],
+      "calibration": {
+        "alpha": 0.1,
+        "edges": [
+          25.0,
+          50.0,
+          75.0,
+          100.0
+        ],
+        "q_lo": [
+          -8.313,
+          -16.067,
+          -23.473,
+          -31.575,
+          -22.521
+        ],
+        "q_hi": [
+          8.644,
+          20.431,
+          32.098,
+          36.713,
+          14.951
+        ],
+        "n_per_bin": [
+          5901,
+          5940,
+          5410,
+          7337,
+          36661
+        ]
+      }
+    }
+  }
+}

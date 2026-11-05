@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "created_at": "2026-11-05T01:41:36+00:00",
+    "rul_version": "0.1.0",
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "cpus": 4,
+    "seconds": 11.4,
+    "data_sha256": {
+      "RUL_FD001.txt": "a19c8ec94931",
+      "RUL_FD002.txt": "c851dd96a6ea",
+      "RUL_FD003.txt": "df1e0566306b",
+      "RUL_FD004.txt": "196b836b85a9",
+      "test_FD001.txt": "3cda7109ce17",
+      "test_FD002.txt": "de7b5bf7e998",
+      "test_FD003.txt": "299babd63c8d",
+      "test_FD004.txt": "1dc675fff062",
+      "train_FD001.txt": "963b5e22825b",
+      "train_FD002.txt": "dac6c4dbc4e7",
+      "train_FD003.txt": "2abbe9968cc5",
+      "train_FD004.txt": "27ef6160b6a1"
+    }
+  },
+  "train_on_rows_test_on_columns": {
+    "FD001": {
+      "FD001": {
+        "rmse": 11.8466,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 0.3477,
+        "n": 100
+      },
+      "FD002": {
+        "rmse": 35.6111,
+        "engines_flagged": 1.0,
+        "unknown_condition_rows": 0.8485,
+        "max_sensor_psi": 4.6338,
+        "n": 259
+      },
+      "FD003": {
+        "rmse": 25.4308,
+        "engines_flagged": 0.38,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 1.3236,
+        "n": 100
+      },
+      "FD004": {
+        "rmse": 39.6072,
+        "engines_flagged": 1.0,
+        "unknown_condition_rows": 0.8531,
+        "max_sensor_psi": 5.1004,
+        "n": 248
+      }
+    },
+    "FD002": {
+      "FD001": {
+        "rmse": 13.9155,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 3.9755,
+        "n": 100
+      },
+      "FD002": {
+        "rmse": 12.9206,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 0.1943,
+        "n": 259
+      },
+      "FD003": {
+        "rmse": 23.6045,
+        "engines_flagged": 0.39,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 4.2717,
+        "n": 100
+      },
+      "FD004": {
+        "rmse": 23.1157,
+        "engines_flagged": 0.375,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 1.105,
+        "n": 248
+      }
+    },
+    "FD003": {
+      "FD001": {
+        "rmse": 11.8956,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 2.7548,
+        "n": 100
+      },
+      "FD002": {
+        "rmse": 48.4344,
+        "engines_flagged": 1.0,
+        "unknown_condition_rows": 0.8485,
+        "max_sensor_psi": 5.5055,
+        "n": 259
+      },
+      "FD003": {
+        "rmse": 12.1187,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 0.3045,
+        "n": 100
+      },
+      "FD004": {
+        "rmse": 47.2093,
+        "engines_flagged": 1.0,
+        "unknown_condition_rows": 0.8531,
+        "max_sensor_psi": 4.7969,
+        "n": 248
+      }
+    },
+    "FD004": {
+      "FD001": {
+        "rmse": 17.0425,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 8.0199,
+        "n": 100
+      },
+      "FD002": {
+        "rmse": 13.3721,
+        "engines_flagged": 0.0,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 2.519,
+        "n": 259
+      },
+      "FD003": {
+        "rmse": 13.7966,
+        "engines_flagged": 0.01,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 4.4111,
+        "n": 100
+      },
+      "FD004": {
+        "rmse": 13.2074,
+        "engines_flagged": 0.0081,
+        "unknown_condition_rows": 0.0,
+        "max_sensor_psi": 0.2941,
+        "n": 248
+      }
+    }
+  },
+  "subsets": [
+    "FD001",
+    "FD002",
+    "FD003",
+    "FD004"
+  ]
+}
